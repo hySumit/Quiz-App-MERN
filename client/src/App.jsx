@@ -1,33 +1,35 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Login from './components/Login'
+import { Route, Routes } from 'react-router-dom'
+import Signup from './components/Signup'
+import CreateQuiz from './components/CreateQuize'
+import ViewQuizzes from './components/ViewQuizzes'
+import QuizStart from './components/QuizStart'
+import QuizTake from './components/QuizTake'
+import Home from './pages/Home'  
+import QuizResult from './components/QuizResult'
+import AdminDashboard from './components/AdminDashboard'
+import UserLeaderboard from './components/UserLeaderboard'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        <Route path='/' element={<Home/>}/>  
+        <Route path='/signup' element={<Signup userType="user"/>}/>
+        <Route path='/admin-signup' element={<Signup userType="admin"/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/quiz' element={<CreateQuiz/>}/>
+        <Route path='/Viewquizzes' element={<ViewQuizzes/>}/>
+
+        <Route path="/quiz/:quizId" element={<QuizStart />} />
+        <Route path="/quiz/:quizId/take" element={<QuizTake />} />
+        <Route path="/quiz-result" element={<QuizResult/>} />
+
+        <Route path="/admin-dashboard" element={<AdminDashboard/>} />
+        <Route path="/admin-leaderboard" element={<UserLeaderboard/>} />
+
+      </Routes>
     </>
   )
 }

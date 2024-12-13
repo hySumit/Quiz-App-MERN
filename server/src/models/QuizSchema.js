@@ -26,7 +26,7 @@ const QuizSchema = new Schema({
                 }
             ],
 
-            correctAnswers : [Strings],
+            correctAnswers : [String],
         },
     ],
 

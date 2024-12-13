@@ -4,13 +4,24 @@ require('dotenv').config()
 const PORT = process.env.PORT || 8080;
 const database = require('./src/config/Database')
 const userRouter = require("./src/routes/userRoute")
+const leaderboardRouter = require('./src/routes/LeaderBoard')
+const quizRouter = require('./src/routes/quizeRoute')
 
 const app = express();
-app.use(express.json())
+
+app.use(express.json()); 
+
+
 app.use(cors({
-    origin:"//*"
-}))   
+    origin: "//*", // Your React app's URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+
 app.use("/user",userRouter)
+app.use("/leaderboard",leaderboardRouter)
+app.use("/quiz",quizRouter)
 
 
 app.get("/",(req,res)=>{
