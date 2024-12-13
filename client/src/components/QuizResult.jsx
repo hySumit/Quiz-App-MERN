@@ -41,7 +41,7 @@ const QuizResult = () => {
         throw new Error('User not authenticated');
       }
 
-      const response = await axios.post('http://localhost:8080/leaderboard', {
+      const response = await axios.post('https://quiz-app-mern-d8mk.onrender.com/leaderboard', {
         userId: user._id,
         quizId: quiz._id,
         username: user.username,

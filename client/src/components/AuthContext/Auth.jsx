@@ -16,11 +16,11 @@ export const AppProvider = ({ children }) => {
   const [error, setError] = useState(null); 
 
   // API URLs
-  const API_BASE = 'http://localhost:8080'; 
-  const QUIZ_URL = `${API_BASE}/quiz`;
-  const USER_URL = `${API_BASE}/user`;
-  const LEADERBOARD_URL = `${API_BASE}/leaderboard`;
-  const AUTH_URL = `${API_BASE}/user`;
+  const API_BASE = 'https://quiz-app-mern-d8mk.onrender.com/'; 
+  const QUIZ_URL = `${API_BASE}quiz`;
+  const USER_URL = `${API_BASE}user`;
+  const LEADERBOARD_URL = `${API_BASE}leaderboard`;
+  const AUTH_URL = `${API_BASE}user`;
 
 
   const fetchQuizzes = async () => {

@@ -33,7 +33,7 @@ const CreateQuiz = () => {
     e.preventDefault();
     
     try {
-      const response = await axios.post('http://localhost:8080/quiz/create', {
+      const response = await axios.post('https://quiz-app-mern-d8mk.onrender.com/quiz/create', {
         title: quizTitle,
         questions: questions.map(q => ({
           text: q.text,

@@ -13,7 +13,7 @@ const Signup = ({ userType = "user" }) => {
     setError(""); 
 
     try {
-      const response = await axios.post("http://localhost:8080/user/signup", {
+      const response = await axios.post("https://quiz-app-mern-d8mk.onrender.com/user/signup", {
         username,
         password,
         role: userType  
