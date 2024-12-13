@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 app.use(cors({
-    origin: "//*", // Your React app's URL
+    origin: "//*", 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
